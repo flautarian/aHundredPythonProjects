@@ -1,0 +1,49 @@
+from turtle import Turtle, Screen
+from ball import Ball
+from player import Player
+from scoreboard import Scoreboard
+
+import time
+
+scoreboard = Scoreboard()
+
+screen = Screen()
+screen.setup(height=600, width=1000)
+screen.bgcolor("black")
+screen.tracer(0)
+screen.listen()
+screen.title("My total pong py")
+
+player_one = Player((-450, 0))
+player_two = Player(position=(445, 0), speed= 5)
+ball = Ball()
+scoreboard = Scoreboard()
+
+screen.onkeypress(key="w", fun=player_one.go_up)
+screen.onkeyrelease(key="w", fun=player_one.release_accel)
+screen.onkeypress(key="s", fun=player_one.go_down)
+screen.onkeyrelease(key="s", fun=player_one.release_accel)
+
+game = 0
+
+while game == 0:
+    player_one.update()
+    player_two.updateBot(ball)
+    
+    if ball.collides(player_one):
+        ball.switch_x_axis(0.5)
+    elif ball.collides(player_two):
+        ball.switch_x_axis(-0.5)
+        
+    if ball.xcor() < -500 or ball.xcor() > 500:
+        if ball.xcor() < -500:
+            scoreboard.addScorePoint(1)
+        elif ball.xcor() > 500:
+            scoreboard.addScorePoint(2)
+        ball.setpos(0, 0)
+        ball.accel = (ball.accel[0] * -1, ball.accel[1])
+        
+    ball.update()
+    screen.update()
+    time.sleep(0.01)
+
