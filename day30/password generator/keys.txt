@@ -1,0 +1,17 @@
+[
+    {
+        "website": "www.google.es",
+        "username": "Facundo",
+        "password": "q11!m82u$G((#1W"
+    },
+    {
+        "website": "www.facebook.com",
+        "username": "Facundo2",
+        "password": "test"
+    },
+    {
+        "website": "www.ebay.es",
+        "username": "Fgiacconi",
+        "password": "681+$nG3k4*$#vf"
+    }
+]
