@@ -30,7 +30,7 @@ with open(script_dir + "/keys.txt") as names_file:
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 def generate_password():
-    new_password = password_generator.generate_password(5, 5, 5, True)
+    new_password = password_generator.generate_password(35, 35, 35, True)
     password_form_value.delete(0,END)
     password_form_value.insert(0,new_password)
     
