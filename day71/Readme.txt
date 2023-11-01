@@ -1,0 +1,1 @@
+This day consisted on project upload from git project to deployable server, no code herer :/

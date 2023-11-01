@@ -1,0 +1,1 @@
+This day had only web development correct practices :)

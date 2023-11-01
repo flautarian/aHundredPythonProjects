@@ -1,0 +1,1 @@
+Day 70 consisted of git basics and project init, no code here :/
