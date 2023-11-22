@@ -1,0 +1,40 @@
+{% include "header.html" %}
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{coffeeshop.img_url}}')">
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="coffeeshop-heading">
+          <h1>{{ coffeeshop.name }}</h1>
+          <span class="meta"
+            >Coffee shop owner
+            <a href="#">{{ coffeeshop.owner }}</a>
+            on {{ coffeeshop.date }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- coffeeshop Content -->
+<article>
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        {{ coffeeshop.description|safe }}
+
+        <div class="d-flex justify-content-end mb-4">
+          <a
+            class="btn btn-primary float-right"
+            href="{{url_for('edit_coffeeshop', coffeeshop_id=coffeeshop.id)}}"
+            >Edit coffee shop</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+{% include "footer.html" %}
