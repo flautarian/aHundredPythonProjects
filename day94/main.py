@@ -1,10 +1,28 @@
+import webbrowser
 import pyautogui
+import os
+import time
 
+# screen size taking
 screenWidth, screenHeight = pyautogui.size() # Get the size of the primary monitor.
+
+# OS setting home folder
+home_folder = os.path.dirname(__file__)
 
 currentMouseX, currentMouseY = pyautogui.position() # Get the XY position of the mouse.
 
-pyautogui.moveTo(100, 150, duration=1, tween=pyautogui.easeInOutQuad) # Move the mouse to XY coordinates.
+url = 'https://trex-runner.com'
+opera_path = r'C:\Users\fgiac\AppData\Local\Programs\Opera GX\launcher.exe'
+webbrowser.register('opera', None, webbrowser.BackgroundBrowser(opera_path))
+
+webbrowser.get('opera').open_new_tab(url)
+
+time.sleep(2)
+
+pyautogui.press('space')
+
+
+""" pyautogui.moveTo(100, 150, duration=1, tween=pyautogui.easeInOutQuad) # Move the mouse to XY coordinates.
 
 pyautogui.click()          # Click the mouse.
 pyautogui.click(100, 200)  # Move the mouse to XY coordinates and click it.
@@ -17,10 +35,10 @@ pyautogui.moveTo(500, 500, duration=2, tween=pyautogui.easeInOutQuad)  # Use twe
 pyautogui.write('Hello world!', interval=0.25)  # type with quarter-second pause in between each key
 pyautogui.press('esc')     # Press the Esc key. All key names are in pyautogui.KEY_NAMES
 
-""" with pyautogui.hold('shift'):  # Press the Shift key down and hold it.
-        pyautogui.press(['left', 'left', 'left', 'left'])  # Press the left arrow key 4 times. """
+with pyautogui.hold('shift'):  # Press the Shift key down and hold it.
+        pyautogui.press(['left', 'left', 'left', 'left'])  # Press the left arrow key 4 times. 
 # Shift key is released automatically.
 
-pyautogui.hotkey('ctrl', 'c') # Press the Ctrl-C hotkey combination.
+pyautogui.hotkey('windows', 'cmd') # Press the Ctrl-C hotkey combination.
 
-pyautogui.alert('This is the message to display.') # Make an alert box appear and pause the program until OK is clicked.
+pyautogui.alert('This is the message to display.') # Make an alert box appear and pause the program until OK is clicked. """

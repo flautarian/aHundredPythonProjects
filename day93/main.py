@@ -65,7 +65,7 @@ def searchShoppings():
       name = f"{subject[0]} - {subject[2]}{subject[3]}"
       total_price += price
       select_shop_list_key['menu'].add_command(label=name, command=lambda x=choice, name=name: show_ticket(x, name))
-    total_tickets_label.config(text=f"Total:{total_price}")
+    total_tickets_label.config(text=f"Total:{total_price}€")
   except HttpError as error:
     print(f"An error occurred: {error}")
       
